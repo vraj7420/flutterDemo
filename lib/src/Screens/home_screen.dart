@@ -104,6 +104,7 @@ class _State extends State<HomeScreen> {
     return Expanded(
       child: Container(
         padding:const EdgeInsets.all(10),
+        alignment: Alignment.topLeft,
         margin: const EdgeInsets.only(
           top: 10,
           bottom: 10
@@ -111,38 +112,40 @@ class _State extends State<HomeScreen> {
         decoration: BoxDecoration(
             border: Border.all(color: const Color(0xFFE8E8E8),width: 2.0),
             borderRadius: const BorderRadius.all(Radius.circular(10))),
-        child: const Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    "Travel Report",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    "£270",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ],
+        child: const Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Travel Report",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      "£270",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Text(
-              "View All",
-              style: TextStyle(
-                  color: Color(0xFFFE3A82),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500),
-            ),
-          ],
+              Text(
+                "View All",
+                style: TextStyle(
+                    color: Color(0xFFFE3A82),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500),
+              ),
+            ],
+          ),
         ),
       ),
     );
