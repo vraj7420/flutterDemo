@@ -9,24 +9,54 @@ class HomeScreen extends StatefulWidget {
 
 class _State extends State<HomeScreen> {
   Widget listView() {
-    return const Column(
+    return Column(
       children: [
-        Row(
-          mainAxisAlignment:MainAxisAlignment.spaceBetween,
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Recent Expense Report",
-            style: TextStyle(
-                color:Colors.black,
-              fontSize: 16,
-              fontWeight: FontWeight.w500
-            ),),
-            Text("View All",
-            style:TextStyle(color:Color(0xFFFE3A82),
-            fontSize: 14,
-            fontWeight: FontWeight.w500),),
-
+            Text(
+              "Recent Expense Report",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500),
+            ),
+            Text(
+              "View All",
+              style: TextStyle(
+                  color: Color(0xFFFE3A82),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500),
+            ),
           ],
-        )
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 16),
+          child: TextField(
+            decoration: InputDecoration(
+                labelText: "Search",
+                isDense: true,
+                floatingLabelBehavior: FloatingLabelBehavior.never,
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                  borderSide:
+                      const BorderSide(color: Color(0xFFE8E8E8), width: 1.0),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                  borderSide:
+                      const BorderSide(color: Color(0xFFE8E8E8), width: 1.0),
+                )),
+          ),
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: 20,
+            itemBuilder: (context, position) {
+              return listItem();
+            },
+          ),
+        ),
       ],
     );
 
@@ -68,6 +98,54 @@ class _State extends State<HomeScreen> {
     //     ),
     //   ],
     // );
+  }
+
+  Widget listItem() {
+    return Expanded(
+      child: Container(
+        padding:const EdgeInsets.all(10),
+        margin: const EdgeInsets.only(
+          top: 10,
+          bottom: 10
+        ),
+        decoration: BoxDecoration(
+            border: Border.all(color: const Color(0xFFE8E8E8),width: 2.0),
+            borderRadius: const BorderRadius.all(Radius.circular(10))),
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Travel Report",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    "£270",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+            ),
+            Text(
+              "View All",
+              style: TextStyle(
+                  color: Color(0xFFFE3A82),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
