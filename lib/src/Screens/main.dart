@@ -1,5 +1,5 @@
 
-import 'package:expanse_tracker_demo_app/src/Screens/add_expense.dart';
+import 'package:expanse_tracker_demo_app/src/Screens/create_exapense.dart';
 import 'package:expanse_tracker_demo_app/src/Screens/bottom_tab.dart';
 import 'package:expanse_tracker_demo_app/src/Screens/home_screen.dart';
 import 'package:expanse_tracker_demo_app/src/Screens/log_in_screen.dart';
@@ -24,7 +24,7 @@ Widget build(BuildContext context) {
       '/LogInScreen': (context) => const LogInScreen(),
       '/Home': (context) => const HomeScreen(),
       '/BottomTab': (context) => const BottomTab(),
-      '/AddExpenseReport': (context) => const AddExpenseReport(),
+      '/CreateExpense': (context) => const CreateExpense(),
 
     },
   );

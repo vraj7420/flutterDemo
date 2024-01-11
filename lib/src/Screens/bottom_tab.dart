@@ -1,4 +1,4 @@
-import 'package:expanse_tracker_demo_app/src/Screens/add_expense.dart';
+import 'package:expanse_tracker_demo_app/src/Screens/create_exapense.dart';
 import 'package:expanse_tracker_demo_app/src/Screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,13 +13,13 @@ class _BottomTabState extends State<BottomTab> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    AddExpenseReport(),
+    CreateExpense(),
     HomeScreen()
   ];
 
   void _onItemTapped(int index) {
     if (index == 1) {
-      Navigator.pushNamed(context, '/AddExpenseReport');
+      Navigator.pushNamed(context, '/CreateExpense');
     } else {
       setState(() {
         _selectedIndex = index;
