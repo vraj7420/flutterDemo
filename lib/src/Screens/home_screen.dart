@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -8,6 +9,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _State extends State<HomeScreen> {
+
+
   Widget listView() {
     return Column(
       children: [
@@ -31,7 +34,7 @@ class _State extends State<HomeScreen> {
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 16),
+          padding: const EdgeInsets.only(top: 16,bottom: 16),
           child: TextField(
             decoration: InputDecoration(
                 labelText: "Search",
@@ -95,7 +98,7 @@ class _State extends State<HomeScreen> {
     //               style: TextStyle(color: Colors.white),
     //             )),
     //       ),
-    //     ),
+    //     ),w
     //   ],
     // );
   }
@@ -103,7 +106,7 @@ class _State extends State<HomeScreen> {
   Widget listItem() {
     return Expanded(
       child: Container(
-        padding:const EdgeInsets.all(10),
+        padding:const EdgeInsets.all(14),
         alignment: Alignment.topLeft,
         margin: const EdgeInsets.only(
           top: 10,
@@ -127,18 +130,26 @@ class _State extends State<HomeScreen> {
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
-                    Text(
-                      "£270",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: 8,
+                        bottom: 8
+                      ),
+                      child: Text(
+                        "£270",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
+                    Text("12/12/2022 | 4 expenses")
+
                   ],
                 ),
               ),
               Text(
-                "View All",
+                "View more",
                 style: TextStyle(
                     color: Color(0xFFFE3A82),
                     fontSize: 14,
@@ -151,12 +162,16 @@ class _State extends State<HomeScreen> {
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
+    if (kDebugMode) {
+      print("build method");
+    }
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.only(top: 80, left: 24, right: 24),
+          padding: const EdgeInsets.only(top: 16, left: 24, right: 24),
           child: Column(
             children: [
               Row(
