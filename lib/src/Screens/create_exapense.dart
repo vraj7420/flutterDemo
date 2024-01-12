@@ -81,6 +81,7 @@ class _CreateExpenseState extends State<CreateExpense> {
                       side: const BorderSide(color:Color(0xFFFE3A82))
                     )),
                 onPressed: () {
+                  Navigator.pushNamed(context,'/AddExpense');
                 },
                 child: Container(
                     padding: const EdgeInsets.all(10),

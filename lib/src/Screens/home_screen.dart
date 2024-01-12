@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -165,9 +164,7 @@ class _State extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (kDebugMode) {
-      print("build method");
-    }
+
     return Scaffold(
       body: SafeArea(
         child: Container(
